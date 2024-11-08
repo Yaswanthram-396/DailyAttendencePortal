@@ -7,9 +7,11 @@ function Home() {
   return (
     <div className="home" style={{ display: "flex" }}>
       <SidePanel />
+
       <Navbar />
     </div>
   );
 }
+// this is my first commit
 
 export default Home;
