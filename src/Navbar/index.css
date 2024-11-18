@@ -5,7 +5,9 @@ nav {
     padding: 0px 40px;
     align-items: center;
     height: 9vh;
-    width: 80%;
+    width: auto;
+    background-color: #fff;
+    border-bottom: 1px solid #D6E3F2;
 }
 .navbarList {
     font-family: Roboto;
