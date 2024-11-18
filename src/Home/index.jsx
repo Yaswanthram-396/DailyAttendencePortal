@@ -3,15 +3,13 @@ import "./index.css";
 import React from "react";
 import SidePanel from "../Sidebar";
 
-function Home() {
+function Dashboard({ Num }) {
   return (
-    <div className="home" style={{ display: "flex" }}>
-      <SidePanel />
-
-      <Navbar />
+    <div className="Dashboard" style={{ display: "flex" }}>
+      <SidePanel Num={Num} />
     </div>
   );
 }
 // this is my first commit
 
-export default Home;
+export default Dashboard;

@@ -64,7 +64,7 @@ class LoginPage extends React.Component {
 
       console.log("Login successful! Token stored.");
 
-      window.location.href = "/DailyAttandence/Home";
+      window.location.href = "/DailyAttandence/Dashboard";
     } catch (error) {
       console.log("There was a problem with the login request:", error);
       this.setState((prevState) => ({
@@ -81,11 +81,6 @@ class LoginPage extends React.Component {
           <div className="nxwLogin" style={{ backgroundColor: "#e3f3fd" }}>
             <div className="loginField">
               <div className="logoImageCon">
-                {/* <img
-                  src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
-                  alt="logo"
-                  className="logoImage"
-                /> */}
                 <h2>Login</h2>
                 <h3>Welcome Back</h3>
                 <p>Please enter your Attendance credentials.</p>
