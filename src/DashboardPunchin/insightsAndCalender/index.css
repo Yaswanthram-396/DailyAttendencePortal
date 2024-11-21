@@ -79,16 +79,18 @@ margin: 4% 0px;
   
   /* Container styles */
 .calendar-container {
-    width: 40%; /* Matches the size in the image */
-    height: auto;
-    background-color: #f7fbff; /* Light blue background */
-    border-radius: 12px;
-    padding: 20px;
-    font-family: "Arial", sans-serif;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 32%;
+  height: auto;
+  background-color: #f7fbff;
+  border-radius: 12px;
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+  box-shadow: 0px 1px 4px 0px rgba(88, 134, 166, 0.25);
+  display: flex;
+  border: 1px solid var(--L-6, #C6E6FB);
+  justify-content: center;
+  align-items: center;
+
   }
   .css-5wchs2-MuiDateCalendar-root{
     width: 100% !important;
@@ -199,4 +201,14 @@ line-height: 22.019px !important; /* 110.096% */
 
 .css-1n1xn3x-MuiPickersSlideTransition-root-MuiDayCalendar-slideTransition>*{
     position: relative ! important;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3%;
+
+}
+select::focus{
+border: none;
 }

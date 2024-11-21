@@ -5,7 +5,8 @@ import Dashboard from "./Home";
 import { useState } from "react";
 import ConfigurationContext from "./globalContext";
 import AccountDetails from "./Account";
-import InsightsCard from "./DashboardPunchin/insights";
+import DashboardPunchin from "./DashboardPunchin";
+
 function App() {
   const [pagein, setPage] = useState("Dashboard");
   const handlePage = (newItem) => {
@@ -23,7 +24,7 @@ function App() {
         <Route path="/" element={<LoginPage />} />
         <Route
           path="/DailyAttandence/Dashboard"
-          element={<Dashboard Num={<InsightsCard />} />}
+          element={<Dashboard Num={<DashboardPunchin />} />}
         />
         <Route
           path="/DailyAttandence/AttendenceReport"
