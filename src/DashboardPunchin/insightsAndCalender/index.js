@@ -136,7 +136,6 @@ const InsightsCard = () => {
           </div>
         </div>
       </div>
-      <AddWeekNumber />
     </>
   );
 };
