@@ -1,52 +1,74 @@
 .profile-card {
     width: 80%;
-    height: 76vh;
+    /* height: 76vh; */
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
-    padding: 20px;
+    padding: 10px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 24%;
     margin: auto;
+    @media (max-width:800px) {
+      width: 80%;
+      /* height:80%; */
+      ;
+    }
   }
   
   .profile-header {
     display: flex;
     align-items: center;
-    position: relative;
+    /* position: relative; */
     flex-direction: column;
     margin-bottom: 20px;
-    background: #e3f2fd;
+    background: #1d9bf0;
     padding: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    height: 8vh;
+    /* height: 8vh; */
     width: 100%;
   }
   .profile-info{
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    top: 5%;
+    @media (max-width:800px) {
+      flex-direction: row;
+      gap: 20px;
+    }
+    
   }
   
     .profile-image-container {
       width: 150px;
       height: 150px;
-      border-radius: 50%;
+      border-radius: 100%;
       background-color: #d9d9d9;
       display: flex;
       justify-content: center;
       align-items: center;
       margin-bottom: 10px;
       border: 4px solid #fff;
+      @media (max-width:400px) {
+       width: 100px;
+       height: 80px;
+      }
+      @media (min-width:401px) and (max-width:800px) {
+        width: 100px;
+        height: 100px;
+       }
   }
   
   .profile-name {
     text-align: center;
+    color: #fff;
+    @media (max-width:800px) {
+    text-align: left;
+
+      
+    }
   }
   
   .account-details {
@@ -57,6 +79,9 @@
     flex-direction: column;
     gap: 32px;
     margin: auto;
+    @media (max-width:800px) {
+      width: 88%;
+    }
   }
   
   .details-row {
@@ -78,4 +103,14 @@
     display: block;
     margin-top: 5px;
   }
-  
+  .account-container{
+    height: 81vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+    @media (max-width:800px) {
+      padding-top: 24px;
+      height: 60vh;
+    }
+  }

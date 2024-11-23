@@ -1,12 +1,12 @@
 import "./index.css";
-import { FaMoon, FaSun } from "react-icons/fa";
-import ConfigurationContext from "../globalContext";
-import { useContext, useEffect, useState } from "react";
+// import { FaMoon, FaSun } from "react-icons/fa";
+// import ConfigurationContext from "../globalContext";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 // import { Panel } from "../Sidebar";
 import Cookies from "js-cookie";
 import { FaBars, FaSignOutAlt } from "react-icons/fa";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 const Navbar = () => {
   const [showpop, setpop] = useState(false);
   const navigate = useNavigate();

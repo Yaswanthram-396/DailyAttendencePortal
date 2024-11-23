@@ -2,12 +2,17 @@
     width: 34%;
     background-color: rgb(247, 251, 255);
     padding: 20px;
-    font-family: Arial, sans-serif;
+    font-family: poppins !important;
     display: flex;
     border-radius: 12px;
     border: 1px solid var(--L-6, #C6E6FB);
     background: #fff;
     box-shadow: 0px 1px 4px 0px rgba(88, 134, 166, 0.25);
+    @media (max-width:800px) {
+      width: 80%;
+      margin: 0px 20px;
+      padding: 14px;
+    }
 }
   
   .insights-header {
@@ -16,6 +21,16 @@
     margin-bottom: 20px;
     align-items: center;
     width: 34%;
+    flex-flow: nowrap;
+    @media (max-width:800px) {
+      width: 84%;
+      
+    }
+    @media (max-width:300px) {
+      flex-flow: column wrap;
+      align-items: flex-start;
+      gap: 16px;
+    }
 }
   
   .insights-title {
@@ -42,6 +57,7 @@
     display: flex;
     width: 100%;
     flex-direction: column;
+    position: relative;
   }
   
   .attendance-label {
@@ -55,7 +71,7 @@ font-size: 16px;
 font-style: normal;
 font-weight: 500;
 line-height: normal;
-margin: 4% 0px;
+margin: 2% 0px;
 }
 .attendance-value {
     color: var(--D-3, #2C5B8C);
@@ -65,12 +81,19 @@ margin: 4% 0px;
     font-weight: 600;
     line-height: normal;
     margin: 0px;
+    @media (max-width:800px) {
+      font-size: 32px;
+    }
 }
   
   .attendance-change {
     margin: 0;
     color: #ff4d4d;
     font-size: 14px;
+    @media (max-width:800px) {
+    font-size: 10px;
+      
+    }
   }
   
   .icon {
@@ -79,16 +102,21 @@ margin: 4% 0px;
   
   /* Container styles */
 .calendar-container {
-    width: 40%; /* Matches the size in the image */
-    height: auto;
-    background-color: #f7fbff; /* Light blue background */
-    border-radius: 12px;
-    padding: 20px;
-    font-family: "Arial", sans-serif;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 32%;
+  height: auto;
+  background-color: #f7fbff;
+  border-radius: 12px;
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+  box-shadow: 0px 1px 4px 0px rgba(88, 134, 166, 0.25);
+  display: flex;
+  border: 1px solid var(--L-6, #C6E6FB);
+  justify-content: center;
+  align-items: center;
+  @media (max-width:800px) {
+    display: none;
+  }
+
   }
   .css-5wchs2-MuiDateCalendar-root{
     width: 100% !important;
@@ -194,9 +222,45 @@ line-height: 22.019px !important; /* 110.096% */
 .graphWithPercentage {
     display: flex;
     justify-content: space-between;
-    position: relative;
 }
 
 .css-1n1xn3x-MuiPickersSlideTransition-root-MuiDayCalendar-slideTransition>*{
     position: relative ! important;
 }
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3%;
+
+}
+select::focus{
+border: none;
+}
+.attendance-month{
+  margin: -2% 0px;
+  @media (max-width:800px) {
+    font-size: 24px;
+  }
+}
+body div{
+  font-family: poppins !important;
+}
+h2{
+  font-weight: 450 !important;
+}
+.mobile-calendar{
+  display: block;
+  cursor: default;
+  /* border-radius: 12px;
+  border: 1px solid var(--L-6, #C6E6FB); */
+  @media (min-width:800px) {
+    display: none !important;
+  }
+}
+.css-1ll44ll-MuiOutlinedInput-notchedOutline{
+  border-radius: 12px !important;
+    border: 1px solid var(--L-6, #C6E6FB) !important;
+    
+  }
+

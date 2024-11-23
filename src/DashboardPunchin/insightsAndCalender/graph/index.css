@@ -1,0 +1,12 @@
+.graphContainer{
+    position: absolute ;
+          right: 0 ;
+          bottom: -4% ;
+          width: 44% ;
+          @media (max-width:800px) {
+            right: -5%;
+          bottom: 6% ;
+          width: 52% ;
+
+          }
+  }
