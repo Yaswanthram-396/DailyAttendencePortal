@@ -1,7 +1,7 @@
 import "./index.css";
 
 import { Link } from "react-router-dom";
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
 import ConfigurationContext from "../globalContext";
@@ -52,24 +52,28 @@ export function Panel({ props, setting }) {
 export function HiGif() {
   return (
     <div className="iframe-con">
-      <dotlottie-player
+      {/* <dotlottie-player
         src="https://lottie.host/637eb98c-5554-4fea-95cc-b87dc7ee94e6/i7yPvsEMfB.json"
         background="transparent"
         speed="1"
         style={{ width: "300px", height: "300px" }}
         autoplay
-      ></dotlottie-player>
+        ></dotlottie-player> */}
+      <img src="public/videos/oneLoopHii.gif" alt="Hello gif" />
     </div>
   );
 }
 
 function SidePanel({ Num }) {
   const { handlePage } = useContext(ConfigurationContext);
-  const pagein = localStorage.getItem("pagein");
+  const [pagein, setPage] = useState(
+    () => localStorage.getItem("pagein") || "Dashboard"
+  );
   const progressFrameRef = useRef(null);
+  const location = useLocation();
 
+  // Update the frame position based on the active container
   useEffect(() => {
-    // Update the frame position based on the active container
     const updateFramePosition = () => {
       const activeElement = document.getElementById(
         pagein === "Dashboard"
@@ -82,42 +86,41 @@ function SidePanel({ Num }) {
       if (activeElement && progressFrameRef.current) {
         const { left, width } = activeElement.getBoundingClientRect();
         if (pagein === "Dashboard") {
-          if (window.innerWidth < 600) {
-            progressFrameRef.current.style.left = `6%`;
-          } else {
-            progressFrameRef.current.style.left = `11%`;
-          }
-        }
-        // progressFrameRef.current.style.left = `${left}px`;
-        else if (pagein === "AttendenceReport") {
-          if (window.innerWidth < 600) {
-            progressFrameRef.current.style.left = `42%`;
-          } else {
-            progressFrameRef.current.style.left = `46%`;
-          }
+          progressFrameRef.current.style.left =
+            window.innerWidth < 600 ? `6%` : `11%`;
+        } else if (pagein === "AttendenceReport") {
+          progressFrameRef.current.style.left =
+            window.innerWidth < 600 ? `42%` : `46%`;
         } else {
-          if (window.innerWidth < 600) {
-            progressFrameRef.current.style.left = `80%`;
-          } else {
-            progressFrameRef.current.style.left = `81.5%`;
-          }
+          progressFrameRef.current.style.left =
+            window.innerWidth < 600 ? `80%` : `81.5%`;
         }
       }
     };
 
     updateFramePosition();
-    window.addEventListener("resize", updateFramePosition); // Recalculate on resize
+    window.addEventListener("resize", updateFramePosition);
 
     return () => window.removeEventListener("resize", updateFramePosition);
   }, [pagein]);
-  const location = useLocation();
 
+  // Sync pagein state with location and handlePage
   useEffect(() => {
-    const currentPath = location;
-    const num = currentPath.pathname.split("/").pop();
-    handlePage(num);
-  }, []);
-  const containerHeight = `${window.innerHeight}px`;
+    const currentPath = location.pathname;
+    const num = currentPath.split("/").pop();
+    const newPage =
+      num === "Dashboard"
+        ? "Dashboard"
+        : num === "AttendenceReport"
+        ? "AttendenceReport"
+        : "myAccount";
+
+    setPage(newPage);
+
+    handlePage(newPage);
+  }, [location, handlePage]);
+
+  // const containerHeight = `${window.innerHeight}px`;
 
   return (
     <>
@@ -132,15 +135,18 @@ function SidePanel({ Num }) {
                       src="https://lottie.host/637eb98c-5554-4fea-95cc-b87dc7ee94e6/i7yPvsEMfB.json"
                       background="transparent"
                       speed="1"
-                      style={{ width: "300px", height: "300px" }}
+                      style={{ width: "204px", height: "282px" }}
                       autoplay
                     ></dotlottie-player>
+                    {/* <img src="../videos/oneLoopHii.gif" alt="Hello gif" /> */}
                   </div>
                   <div className="userNameContainer">
                     <h2 style={{ color: "#1d9bf0" }}>Nitesh Sabbavarapu</h2>
                   </div>
                 </div>
               </div>
+            </Link>
+            <Link to="/DailyAttandence/Dashboard">
               <div
                 className="sidePanelOptions"
                 style={{
@@ -206,7 +212,7 @@ function SidePanel({ Num }) {
           </div>
         </div>
       </div>
-      <div className="TotalContainer" style={{ height: containerHeight }}>
+      <div className="TotalContainer" style={{ height: "100vh" }}>
         <Navbar />
         {Num}
         <div className="mobileSidePanelBar">

@@ -11,9 +11,12 @@ import { DemoContainer, DemoItem } from "@mui/x-date-pickers/internals/demo";
 import { MobileDatePicker } from "@mui/x-date-pickers/MobileDatePicker";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import { StaticDatePicker } from "@mui/x-date-pickers/StaticDatePicker";
+import ReactDatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
 // import "../../../public/images/Frame.svg"
 
-// export function DatePickerValue() {
+// export function DatePickerValue() {rt
 //   const [value, setValue] = useState(dayjs("2022-04-17"));
 
 //   return (
@@ -46,8 +49,47 @@ import { StaticDatePicker } from "@mui/x-date-pickers/StaticDatePicker";
 //     </div>
 //   );
 // }
+
+// import "./CustomDatePicker.css"; // Custom CSS for styling
+
+const CustomDatePicker = () => {
+  const [selectedDate, setSelectedDate] = useState(new Date());
+
+  return (
+    <div className="inner-calendar-container">
+      <ReactDatePicker
+        selected={selectedDate}
+        onChange={(date) => setSelectedDate(date)}
+        inline
+        renderCustomHeader={({ date, decreaseMonth, increaseMonth }) => (
+          <div className="header">
+            <button onClick={decreaseMonth}>&lt;</button>
+            <span className="header-title">
+              {date.toLocaleString("default", { month: "long" })}{" "}
+              {date.getFullYear()}
+            </span>
+            <button onClick={increaseMonth}>&gt;</button>
+          </div>
+        )}
+        dayClassName={(date) => {
+          const isSelected =
+            date.getDate() === selectedDate.getDate() &&
+            date.getMonth() === selectedDate.getMonth() &&
+            date.getFullYear() === selectedDate.getFullYear();
+
+          const isInSameMonth =
+            date.getMonth() === selectedDate.getMonth() &&
+            date.getFullYear() === selectedDate.getFullYear();
+
+          return isSelected && isInSameMonth ? "selected-day" : "";
+        }}
+      />
+    </div>
+  );
+};
+
 export function DatePickerValue() {
-  const [value, setValue] = useState(dayjs("2022-04-17"));
+  const [value, setValue] = useState(dayjs(new Date()));
 
   return (
     <div className="mobile-calendar">
@@ -145,19 +187,8 @@ export function AddWeekNumber() {
             calendarWeekNumberText: (weekNumber) => `${weekNumber}.`,
           }}
         >
-          <DateCalendar
-            shouldDisableDate={disablePreviousDates}
-            value={currentDate}
-            onChange={(newDate) => setCurrentDate(newDate)}
-            slotProps={{
-              day: {
-                renderDay: customDayRender,
-              },
-            }}
-            slots={{
-              switchViewButton: () => null,
-            }}
-          />
+          {/* <ReactDatePicker inline /> */}
+          <CustomDatePicker />
         </LocalizationProvider>
       </div>
       <DatePickerValue />

@@ -55,3 +55,6 @@ body{
 span{
   font-family: poppins;
 }
+button {
+  cursor: pointer;
+}

@@ -77,7 +77,7 @@ class LoginPage extends React.Component {
     const { username, password, showPass, error } = this.state;
     return (
       <>
-        <div className="fullCOntainer">
+        <div className="fullContainer">
           <div className="nxwLogin" style={{ backgroundColor: "#e3f3fd" }}>
             <div className="loginField">
               <div className="logoImageCon">

@@ -1,0 +1,76 @@
+.Table {
+    background-color: #fff;
+    padding: 8px 20px;
+    border-radius: 10px;
+    padding-right: 0px;
+
+}
+
+.css-6rg9iv-MuiStack-root {
+    align-items: end !important;
+}
+
+.css-6rg9iv-MuiStack-root nav {
+    background-color: #F3F8FB !important;
+    border: 0px;
+}
+
+.css-ptck8z-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+    background-color: #1d9bf0 !important;
+    color: #fff !important;
+}
+
+.Date-input {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.filter-fields {
+    display: flex;
+    flex-direction: row;
+    /* width: 100%; */
+    /* justify-content: space-around; */
+
+
+    @media (max-width:800px) {
+
+        justify-content: space-between;
+    }
+
+}
+
+.attendance-report-filters {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: 24px;
+    gap: 20px;
+    flex-flow: row wrap;
+    width: 100%;
+
+
+    @media (max-width:800px) {
+        flex-direction: column;
+    }
+}
+
+.date-fields {
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+
+    @media (max-width:500px) {
+        flex-direction: column;
+    }
+}
+
+.attendance-report-filters input {
+    margin-bottom: 0px;
+
+    @media (max-width:300px) {
+        margin-bottom: 5px;
+
+    }
+}
