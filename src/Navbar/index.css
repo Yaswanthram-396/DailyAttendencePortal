@@ -1,4 +1,3 @@
-
 nav {
     display: flex;
     justify-content: flex-end;
@@ -8,24 +7,33 @@ nav {
     width: auto;
     background-color: #fff;
     border-bottom: 1px solid #D6E3F2;
+
+    @media (max-width:771px) {
+        padding: 0px 10px;
+    }
 }
+
 .navbarList {
     font-family: Roboto;
     display: flex;
     align-items: center;
-    gap: 20px;
+    width: 271px;
+    /* max-width: 285px; */
 }
+
 li {
     list-style-type: none;
-}   
+}
+
 .logoutBtn {
     font-size: 16px;
     display: block;
     padding: 6px 16px;
-    background-color:transparent;
+    background-color: transparent;
     color: #3b82f6;
     border: 2px solid #3b82f6;
     border-radius: 3px;
+
     @media (max-width:771px) {
         display: none;
     }
@@ -34,20 +42,27 @@ li {
 .poffile {
     width: 32px;
     height: 32px;
+
     @media (max-width:771px) {
         display: none;
     }
 }
+
 .logoNavbar {
     width: 100px;
 }
+
 .logoutBtn {
     font-size: 16px;
     padding: 6px 10px;
 }
-.num{
-    color: white ; 
-    border: 1px solid white; };
+
+.num {
+    color: white;
+    border: 1px solid white;
+}
+
+;
 /* .pop{
     position: absolute;
     top:50%;
@@ -61,20 +76,22 @@ li {
 
 
 
-    .poper h3 {
-        margin-bottom: 50px;
-    }
-     .Cancel-btn{
+.poper h3 {
+    margin-bottom: 50px;
+}
 
-        color: rgb(148, 163, 184);
-        font-size: 15px;
-        cursor: pointer;
-        padding: 15px 30px;
-        border-radius: 5px;
-        border: 1px solid rgb(148, 163, 184);
-        background-color: transparent;
-    }
-.Confirm-btn{
+.Cancel-btn {
+
+    color: rgb(148, 163, 184);
+    font-size: 15px;
+    cursor: pointer;
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: 1px solid rgb(148, 163, 184);
+    background-color: transparent;
+}
+
+.Confirm-btn {
     padding: 15px 30px;
     border-radius: 5px;
     border: 0px;
@@ -85,35 +102,117 @@ li {
 
 }
 
-    .poper h3 {
-        margin-bottom: 50px;
+.poper h3 {
+    margin-bottom: 50px;
+}
+
+.pop-btn {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.entirePop {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.logoutSVG {
+    @media (min-width:770px) {
+        display: none;
     }
-    .pop-btn{
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
+}
+
+.poper {
+    padding: 12px;
+
+    @media (max-width:600px) {
+        width: 90% !important;
+        top: 32% !important;
+        left: 2% !important;
     }
-    .entirePop {
-        position: fixed;
-        z-index: 999;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, .5);
+
+    @media (min-width:601px) and (max-width:900px) {
+        width: 56% !important;
+        left: 20% !important;
     }
-    .logoutSVG{
-        @media (min-width:770px) {
-            display: none;
-        }
-    }
-    .poper{
-        padding: 12px;
-        @media (max-width:600px) {
-            width: 90% !important;
-            top: 32% !important;
-            left: 2% !important;
-        }
-        @media (min-width:601px) and (max-width:900px){
-            width: 56% !important;
-            left: 20% !important;
-        }
-    }
+}
+
+/* Container */
+.dropdown-container-navbar {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 12px;
+    padding: 4px;
+    border: 1px solid var(--L-6, #C6E6FB);
+    background: #fff;
+    box-shadow: 0px 1px 4px 0px rgba(88, 134, 166, 0.25);
+    width: 100%;
+}
+
+/* Profile Section */
+.profile-section {
+    display: flex;
+    align-items: center;
+    /* gap: 10px; */
+    justify-content: space-evenly;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.profile-name-navbar {
+    font-size: 16px;
+    color: #000;
+    font-weight: 500;
+}
+
+.dropdown-arrow {
+    font-size: 14px;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 15px;
+    width: 64%;
+    z-index: 10;
+}
+
+/* Logout Option */
+.logout-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #d9534f;
+    /* Light red color */
+    font-weight: 500;
+}
+
+.logout-option:hover {
+    background-color: #fdf2f2;
+    /* Slight red background on hover */
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.logout-icon {
+    font-size: 18px;
+}
+
+.logout-text {
+    font-size: 14px;
+}
