@@ -3,26 +3,21 @@ import { VictoryChart, VictoryArea, VictoryAxis } from "victory";
 import "./index.css";
 const LineGraphVictory = () => {
   const data = [
-    { x: 1, y: 65 },
-    { x: 2, y: 59 },
-    { x: 3, y: 80 },
-    { x: 4, y: 81 },
-    { x: 5, y: 69 },
-    { x: 6, y: 90 },
-    { x: 7, y: 70 },
+    { x: 1, y: 20 },
+    { x: 2, y: 35 },
+    { x: 3, y: 50 },
+    { x: 4, y: 44 },
+    { x: 5, y: 33 },
+    { x: 6, y: 59 },
+    { x: 7, y: 75 },
+
   ];
 
   const isDecreasing = data[data.length - 1].y < data[0].y;
 
   return (
-    <div
-      style={{
-        position: "absolute",
-        right: "0",
-        bottom: "-4%",
-        width: "60%",
-      }}
-    >
+    <div className="graphContainer">
+
       <VictoryChart
         domainPadding={{ x: 10, y: 10 }}
         padding={{ top: 20, bottom: 20, left: 20, right: 20 }}

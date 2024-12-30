@@ -1,33 +1,81 @@
 import "./index.css";
-import { FaMoon, FaSun } from "react-icons/fa";
-import ConfigurationContext from "../globalContext";
-import { useContext, useEffect, useState } from "react";
+// import { FaMoon, FaSun } from "react-icons/fa";
+// import ConfigurationContext from "../globalContext";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 // import { Panel } from "../Sidebar";
 import Cookies from "js-cookie";
-import { FaBars, FaSignOutAlt } from "react-icons/fa";
-import { Link } from "react-router-dom";
-const Navbar = () => {
-  const [showpop, setpop] = useState(false);
+import { FaSignOutAlt } from "react-icons/fa";
+// import { Link } from "react-router-dom";
+
+import React from "react";
+// import { FaSignOutAlt } from "react-icons/fa"; // Logout icon from react-icons
+// import "./DropdownMenu.css"; // CSS file for styling
+
+export const ProfileDropdown = () => {
+  const [isOpen, setIsOpen] = useState(false); // State for dropdown visibility
   const navigate = useNavigate();
-  const handleRemove = () => {
+  const handleLogout = () => {
     Cookies.remove("jwt_token");
     navigate("/");
   };
-  const [stile, setStile] = useState({ display: "none" });
-
-  const handleProfile = () => {
-    setStile({
-      display: "block",
-      position: "absolute",
-      zIndex: 2,
-      top: "0",
-      left: "0",
-    });
+  // Toggle dropdown visibility
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
   };
+
+  return (
+    <div className="dropdown-container-navbar">
+      {/* Profile Section */}
+      <div className="profile-section" onClick={toggleDropdown}>
+        {/* <img
+          src="https://via.placeholder.com/40" // Replace with actual profile picture URL
+          alt="Profile"
+          className="profile-pic"
+        /> */}
+        <div
+          style={{
+            width: "40px",
+            height: "40px",
+            borderRadius: "50%",
+            backgroundColor: "blue",
+          }}
+        ></div>
+        <span className="profile-name-navbar">Nitesh Sabbavarapu</span>
+        <span className="dropdown-arrow">▼</span>
+      </div>
+
+      {/* Dropdown Menu */}
+      {isOpen && (
+        <div className="dropdown-menu">
+          <div className="logout-option" onClick={() => handleLogout(true)}>
+            <FaSignOutAlt className="logout-icon" />
+            <span className="logout-text">Log Out</span>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+const Navbar = () => {
+  // const [showpop, setpop] = useState(false);
+  // const navigate = useNavigate();
+
+  // const [stile, setStile] = useState({ display: "none" });
+
+  // const handleProfile = () => {
+  //   setStile({
+  //     display: "block",
+  //     position: "absolute",
+  //     zIndex: 2,
+  //     top: "0",
+  //     left: "0",
+  //   });
+  // };
   return (
     <>
-      {showpop ? (
+      {/* {showpop ? (
         <div className="entirePop">
           <div
             className="poper"
@@ -57,10 +105,10 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-      ) : null}
+      ) : null} */}
       <nav>
         <div className="navbarList">
-          <li>
+          {/* <li>
             <img
               src="https://assets.ccbp.in/frontend/react-js/nxt-watch-profile-img.png"
               alt="logo"
@@ -80,7 +128,8 @@ const Navbar = () => {
             style={{ fontSize: "24px" }}
             title="logout"
             onClick={() => setpop(true)}
-          />
+          /> */}
+          <ProfileDropdown />
         </div>
       </nav>
     </>

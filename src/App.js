@@ -1,11 +1,14 @@
 import "./App.css";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import LoginPage from "./Login";
 import Dashboard from "./Home";
 import { useState } from "react";
 import ConfigurationContext from "./globalContext";
 import AccountDetails from "./Account";
 import DashboardPunchin from "./DashboardPunchin";
+
+import AttendanceReport from "./AttendenceReport";
+
 
 function App() {
   const [pagein, setPage] = useState("Dashboard");
@@ -28,7 +31,7 @@ function App() {
         />
         <Route
           path="/DailyAttandence/AttendenceReport"
-          element={<Dashboard Num={<LoginPage />} />}
+          element={<Dashboard Num={<AttendanceReport />} />}
         />
         <Route
           path="/DailyAttandence/myAccount"

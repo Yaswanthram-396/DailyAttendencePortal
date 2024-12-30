@@ -1,86 +1,133 @@
 .insights-card {
-    width: 34%;
-    background-color: rgb(247, 251, 255);
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    display: flex;
-    border-radius: 12px;
-    border: 1px solid var(--L-6, #C6E6FB);
-    background: #fff;
-    box-shadow: 0px 1px 4px 0px rgba(88, 134, 166, 0.25);
+  width: 34%;
+  background-color: rgb(247, 251, 255);
+  padding: 20px;
+  font-family: poppins !important;
+  display: flex;
+  border-radius: 12px;
+  border: 1px solid var(--L-6, #C6E6FB);
+  background: #fff;
+  box-shadow: 0px 1px 4px 0px rgba(88, 134, 166, 0.25);
+
+  @media (max-width:400px) {
+    overflow: hidden;
+    width: 80%;
+    margin: 0px 20px;
+    padding: 14px;
+  }
+
+  @media (min-width:401px) and (max-width:800px) {
+    width: 80%;
+    margin: 0px 20px;
+    padding: 14px;
+  }
+
+  @media (min-width:800px) and (max-width:1130px) {
+    width: 63%;
+  }
+
+  @media (min-width:1130px) and (max-width:1436px) {
+    width: 48%;
+  }
 }
-  
-  .insights-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    align-items: center;
-    width: 34%;
+
+.insights-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
+  width: auto;
+  gap: 24px;
+  flex-flow: nowrap;
+
+  @media (max-width:800px) {
+    width: 84%;
+
+  }
+
+  @media (max-width:300px) {
+    flex-flow: column wrap;
+    align-items: flex-start;
+    gap: 16px;
+  }
 }
-  
-  .insights-title {
-    font-size: 16px;
-    font-weight: bold;
-  }
-  
-  .dropdown-container {
-    border-radius: 12px;
-    padding: 4px;
-    border: 1px solid var(--L-6, #C6E6FB);
-    background: #fff;
-    box-shadow: 0px 1px 4px 0px rgba(88, 134, 166, 0.25);
-  }
-  
-  .dropdown {
-    border: 1px solid #fff;
-    padding: 5px 10px;
-    background-color: #fff;
-    margin-left: 5px;
-  }
-  
-  .insights-body {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-  }
-  
-  .attendance-label {
-    font-size: 14px;
-    margin: 0 0 10px;
-  }
-  .attendance-percentage {
+
+.insights-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.dropdown-container {
+  border-radius: 12px;
+  padding: 4px;
+  border: 1px solid var(--L-6, #C6E6FB);
+  background: #fff;
+  box-shadow: 0px 1px 4px 0px rgba(88, 134, 166, 0.25);
+
+}
+
+.dropdown {
+  border: 1px solid #fff;
+  padding: 5px 10px;
+  background-color: #fff;
+  margin-left: 5px;
+}
+
+.insights-body {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  position: relative;
+}
+
+.attendance-label {
+  font-size: 14px;
+  margin: 0 0 10px;
+}
+
+.attendance-percentage {
   color: var(--D-2, #1F4062);
-font-family: Poppins;
-font-size: 16px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
-margin: 4% 0px;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 2% 0px;
 }
+
 .attendance-value {
-    color: var(--D-3, #2C5B8C);
-    font-family: Poppins;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    margin: 0px;
+  color: var(--D-3, #2C5B8C);
+  font-family: Poppins;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0px;
+
+  @media (max-width:800px) {
+    font-size: 32px;
+  }
 }
-  
-  .attendance-change {
-    margin: 0;
-    color: #ff4d4d;
-    font-size: 14px;
+
+.attendance-change {
+  margin: 0;
+  color: #ff4d4d;
+  font-size: 14px;
+
+  @media (max-width:800px) {
+    font-size: 10px;
+
   }
-  
-  .icon {
-    margin-right: 5px;
-  }
-  
-  /* Container styles */
+}
+
+.icon {
+  margin-right: 5px;
+}
+
+/* Container styles */
 .calendar-container {
-  width: 32%;
-  height: auto;
+  width: 40%;
+  min-height: 37vh;
   background-color: #f7fbff;
   border-radius: 12px;
   padding: 20px;
@@ -91,124 +138,334 @@ margin: 4% 0px;
   justify-content: center;
   align-items: center;
 
-  }
-  .css-5wchs2-MuiDateCalendar-root{
-    width: 100% !important;
-  }
-  /* Custom header styling for month and year */
-  .MuiTypography-root {
-    font-size: 18px;
-    font-weight: bold;
-    color: #4a5568; /* Dark gray text */
-    text-align: center;
-  }
-  
-  /* Calendar table styling */
-  .MuiDayCalendar-root {
-    width: 100%;
-    margin-top: 10px;
-    font-size: 14px;
-    color: #6b7280; /* Subtle gray text for days */
-  }
-  
-  .MuiPickersDay-root {
-    color: #4a5568;
-    font-size: 14px;
-  }
-  .css-1rl1vrc-MuiDayCalendar-header{
-    /* month */
-    justify-content: space-around !important;
-  }
-  .css-1pv2de5-MuiDayCalendar-weekContainer{
-justify-content: space-around !important;
-margin: 16px 0px !important;
+  @media (max-width:800px) {
+    display: none;
   }
 
-  .css-17f9e7e-MuiTypography-root-MuiDayCalendar-weekDayLabel{ 
-    /* day-head */
-    color: var(--L-6, #1D9BF0) !important;
-text-align: center !important;
-font-feature-settings: 'liga' off, 'clig' off !important;
-font-family: Poppins !important;
-font-size: 20px !important;
-font-style: normal !important;
-font-weight: 500 !important;
-line-height: 22.019px !important; 
-  }
-  .css-cyfsxc-MuiPickersCalendarHeader-labelContainer{
-    justify-content: center !important;
-  }
-  .MuiPickersDay-root.Mui-selected {
-    background-color: #2196f3 !important; /* Blue for selected date */
-    color: #fff !important;
-    padding: 20px !important;
-    text-align: center !important;
-    font-size: 19px !important;
-  }
-  
-  /* Weekday header styling */
-  .MuiDayCalendar-weekDayLabel {
-    color: #9ca3af; /* Lighter gray for week labels */
-    font-weight: bold;
-    font-size: 14px;
-    text-align: center;
-  }
-  
-
-  .css-1chuxo2-MuiPickersCalendarHeader-label{
-    color: var(--D-3, #2C5B8C) !important;
-text-align: center !important;
-font-feature-settings: 'liga' off, 'clig' off !important;;
-font-family: Poppins !important;
-font-size: 20px !important;
-font-style: normal !important;
-font-weight: 600 !important;
-line-height: 26.423px !important; /* 132.115% */
+  @media (min-width:1300px) {
+    width: 30%;
   }
 
-  .css-4k4mmf-MuiButtonBase-root-MuiPickersDay-root.Mui-disabled:not(.Mui-selected) {
-    /* color: rgba(0, 0, 0, 0.38); */
-    color: var(--D-5, #83ACD8) !important;
-    text-align: center !important;
-    font-feature-settings: 'liga' off, 'clig' off !important;;
-    font-family: Poppins !important;
-    font-size: 20px !important;
-    font-style: normal !important;
-    font-weight: 400 !important;
-    line-height: 22.019px !important;
 }
-.css-4k4mmf-MuiButtonBase-root-MuiPickersDay-root{
-    color: var(--D-1, #122539) !important;
-text-align: center !important;
-font-feature-settings: 'liga' off, 'clig' off !important;;
-font-family: Poppins !important;
-font-size: 20px !important;
-font-style: normal !important;
-font-weight: 400 !important;
-line-height: 22.019px !important; /* 110.096% */
+
+.css-5wchs2-MuiDateCalendar-root {
+  width: 100% !important;
 }
-.css-5wchs2-MuiDateCalendar-root{
-    height: auto !important;
-    max-height: 100% !important;
+
+/* Custom header styling for month and year */
+.MuiTypography-root {
+  font-size: 18px;
+  font-weight: bold;
+  color: #4a5568;
+  /* Dark gray text */
+  text-align: center;
+}
+
+/* Calendar table styling */
+.MuiDayCalendar-root {
+  width: 100%;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #6b7280;
+  /* Subtle gray text for days */
+}
+
+.MuiPickersDay-root {
+  color: #4a5568;
+  font-size: 14px;
+}
+
+.css-1rl1vrc-MuiDayCalendar-header {
+  /* month */
+  justify-content: space-around !important;
+}
+
+.css-1pv2de5-MuiDayCalendar-weekContainer {
+  justify-content: space-around !important;
+  margin: 16px 0px !important;
+}
+
+.css-17f9e7e-MuiTypography-root-MuiDayCalendar-weekDayLabel {
+  /* day-head */
+  color: var(--L-6, #1D9BF0) !important;
+  text-align: center !important;
+  font-feature-settings: 'liga'off, 'clig'off !important;
+  font-family: Poppins !important;
+  font-size: 20px !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  line-height: 22.019px !important;
+}
+
+.css-cyfsxc-MuiPickersCalendarHeader-labelContainer {
+  justify-content: center !important;
+}
+
+.MuiPickersDay-root.Mui-selected {
+  background-color: #2196f3 !important;
+  /* Blue for selected date */
+  color: #fff !important;
+  padding: 20px !important;
+  text-align: center !important;
+  font-size: 19px !important;
+}
+
+/* Weekday header styling */
+.MuiDayCalendar-weekDayLabel {
+  color: #9ca3af;
+  /* Lighter gray for week labels */
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+}
+
+
+.css-1chuxo2-MuiPickersCalendarHeader-label {
+  color: var(--D-3, #2C5B8C) !important;
+  text-align: center !important;
+  font-feature-settings: 'liga'off, 'clig'off !important;
+  ;
+  font-family: Poppins !important;
+  font-size: 20px !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  line-height: 26.423px !important;
+  /* 132.115% */
+}
+
+.css-4k4mmf-MuiButtonBase-root-MuiPickersDay-root.Mui-disabled:not(.Mui-selected) {
+  /* color: rgba(0, 0, 0, 0.38); */
+  color: var(--D-5, #83ACD8) !important;
+  text-align: center !important;
+  font-feature-settings: 'liga'off, 'clig'off !important;
+  ;
+  font-family: Poppins !important;
+  font-size: 20px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 22.019px !important;
+}
+
+.css-4k4mmf-MuiButtonBase-root-MuiPickersDay-root {
+  color: var(--D-1, #122539) !important;
+  text-align: center !important;
+  font-feature-settings: 'liga'off, 'clig'off !important;
+  ;
+  font-family: Poppins !important;
+  font-size: 20px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 22.019px !important;
+  /* 110.096% */
+}
+
+.css-5wchs2-MuiDateCalendar-root {
+  height: auto !important;
+  max-height: 100% !important;
+
 }
 
 
 .graphWithPercentage {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
+  display: flex;
+  justify-content: space-between;
 }
 
-.css-1n1xn3x-MuiPickersSlideTransition-root-MuiDayCalendar-slideTransition>*{
-    position: relative ! important;
+.css-1n1xn3x-MuiPickersSlideTransition-root-MuiDayCalendar-slideTransition>* {
+  position: relative ! important;
 }
-.container{
+
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 3%;
 
 }
-select::focus{
-border: none;
+
+select::focus {
+  border: none;
+}
+
+.attendance-month {
+  margin: -2% 0px;
+
+  @media (max-width:800px) {
+    font-size: 24px;
+  }
+}
+
+body div {
+  font-family: poppins !important;
+}
+
+h2 {
+  font-weight: 450 !important;
+}
+
+.mobile-calendar {
+  display: block;
+  cursor: default;
+
+  /* border-radius: 12px;
+  border: 1px solid var(--L-6, #C6E6FB); */
+  @media (min-width:800px) {
+    display: none !important;
+  }
+}
+
+.css-1ll44ll-MuiOutlinedInput-notchedOutline {
+  border-radius: 12px !important;
+  border: 1px solid var(--L-6, #C6E6FB) !important;
+
+}
+
+.react-datepicker__week {
+  white-space: nowrap;
+  display: flex;
+  justify-content: space-between;
+}
+
+.inner-calendar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 20px; */
+  /* background-color: #f9fbfe; */
+  /* border: 1px solid #d3e3f0; */
+  border-radius: 8px;
+  width: 100%;
+  margin: auto;
+  /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
+}
+
+.react-datepicker {
+  font-family: "Helvetica Neue", helvetica, arial, sans-serif;
+  font-size: 0.8rem;
+  background-color: transparent !important;
+  color: #000;
+  border: 0px !important;
+  border-radius: 0px !important;
+  display: inline-block;
+  position: relative;
+  line-height: initial;
+  width: 100%;
+}
+
+.react-datepicker__header {
+  background-color: transparent !important;
+  border: none ! important;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.header-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.react-datepicker__month {
+  margin: 0;
+}
+
+.react-datepicker__day-name {
+  font-size: 14px;
+  color: #5d6d7e;
+}
+
+.react-datepicker__day {
+  width: 36px;
+  height: 36px;
+  margin: 2px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  color: var(--D-1, #122539) !important;
+  font-feature-settings: 'liga'off, 'clig'off;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22.019px;
+
+}
+
+.react-datepicker__day:hover {
+  background-color: #eaf4fc;
+}
+
+.selected-day {
+  background-color: #2196f3;
+  color: #fff;
+  font-weight: bold;
+}
+
+.react-datepicker__day--disabled {
+  color: #b3b3b3;
+  cursor: not-allowed;
+}
+
+.react-datepicker__day--today {
+  border: 1px solid #2196f3;
+  color: #2196f3;
+}
+
+.react-datepicker__month-container {
+  width: 100%;
+}
+
+.react-datepicker__day-names {
+  white-space: nowrap;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 8px;
+
+  margin-bottom: -8px;
+}
+
+.react-datepicker__day-name {
+  color: #1D9BF0 !important;
+  text-align: center;
+  font-feature-settings: 'liga'off, 'clig'off;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22.019px !important;
+  /* 110.096% */
+}
+
+.header button {
+  background-color: #fff !important;
+  border: none !important;
+}
+
+.react-datepicker__day--outside-month {
+  color: var(--D-5, #83ACD8) !important;
+  text-align: center !important;
+  font-feature-settings: 'liga'off, 'clig'off !important;
+  ;
+  font-family: Poppins !important;
+  font-size: 16px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 22.019px !important;
+}
+
+.selected-day {
+  background-color: #2196f3;
+  color: #fff !important;
+  font-weight: bold;
+  border-radius: 50%;
+
 }
