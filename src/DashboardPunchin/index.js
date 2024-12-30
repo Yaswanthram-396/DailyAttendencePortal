@@ -63,6 +63,8 @@ function DashboardPunchin() {
     };
 
     console.log(note);
+
+
     return (
       <div className="punchin">
         <div className="PunchInImages">
@@ -92,6 +94,8 @@ function DashboardPunchin() {
           >
             Punch Out
           </button>
+=======
+        
         </div>
       </div>
     );
@@ -102,6 +106,7 @@ function DashboardPunchin() {
       <div className="punchin-container">
         <AddWeekNumber />
         {!punchin ? <PunchIn /> : <Punchout />}
+
       </div>
     </div>
   );

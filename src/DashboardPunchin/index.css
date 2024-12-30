@@ -1,3 +1,4 @@
+
 .punchin-container {
     display: flex;
     flex-direction: row;
@@ -53,6 +54,8 @@
     }
 }
 
+=======
+
 .PunchInImages {
     display: flex;
     flex-direction: column;
@@ -87,7 +90,6 @@
 
 .punchin-button-container button {
     border-radius: 8px;
-
     color: #fff;
     padding: 12px 24px;
     width: 100%;
@@ -103,4 +105,6 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+
+
 }

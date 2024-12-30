@@ -10,12 +10,14 @@ const LineGraphVictory = () => {
     { x: 5, y: 33 },
     { x: 6, y: 59 },
     { x: 7, y: 75 },
+
   ];
 
   const isDecreasing = data[data.length - 1].y < data[0].y;
 
   return (
     <div className="graphContainer">
+
       <VictoryChart
         domainPadding={{ x: 10, y: 10 }}
         padding={{ top: 20, bottom: 20, left: 20, right: 20 }}

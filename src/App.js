@@ -6,7 +6,9 @@ import { useState } from "react";
 import ConfigurationContext from "./globalContext";
 import AccountDetails from "./Account";
 import DashboardPunchin from "./DashboardPunchin";
+
 import AttendanceReport from "./AttendenceReport";
+
 
 function App() {
   const [pagein, setPage] = useState("Dashboard");

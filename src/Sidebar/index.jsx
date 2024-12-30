@@ -53,6 +53,8 @@ export function HiGif() {
   return (
     <div className="iframe-con">
       {/* <dotlottie-player
+=======
+      <dotlottie-player
         src="https://lottie.host/637eb98c-5554-4fea-95cc-b87dc7ee94e6/i7yPvsEMfB.json"
         background="transparent"
         speed="1"

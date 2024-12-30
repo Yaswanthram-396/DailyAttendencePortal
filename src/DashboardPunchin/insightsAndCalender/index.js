@@ -137,6 +137,7 @@ export function DatePickerValue() {
   );
 }
 
+
 export function AddWeekNumber() {
   const [currentDate, setCurrentDate] = useState(dayjs());
 
@@ -145,6 +146,7 @@ export function AddWeekNumber() {
     const interval = setInterval(() => {
       setCurrentDate(dayjs());
     }, 1000 * 60 * 60 * 24); // Update every 24 hours
+
 
     return () => clearInterval(interval); // Cleanup on component unmount
   }, []);
@@ -155,6 +157,7 @@ export function AddWeekNumber() {
   // Customize today's date appearance
   const customDayRender = (day, selectedDates, pickersDayProps) => {
     const isToday = day.isSame(dayjs(), "day");
+
 
     return (
       <div
@@ -193,6 +196,31 @@ export function AddWeekNumber() {
       </div>
       <DatePickerValue />
     </>
+
+//     <div className="calendar-container">
+//       <LocalizationProvider
+//         dateAdapter={AdapterDayjs}
+//         localeText={{
+//           calendarWeekNumberHeaderText: "#",
+//           calendarWeekNumberText: (weekNumber) => `${weekNumber}.`,
+//         }}
+//       >
+//         <DateCalendar
+//           shouldDisableDate={disablePreviousDates}
+//           value={currentDate}
+//           onChange={(newDate) => setCurrentDate(newDate)}
+//           slotProps={{
+//             day: {
+//               renderDay: customDayRender,
+//             },
+//           }}
+//           slots={{
+//             switchViewButton: () => null,
+//           }}
+//         />
+//       </LocalizationProvider>
+//     </div>
+
   );
 }
 
